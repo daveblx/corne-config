@@ -1,5 +1,7 @@
 /*
- * Neuromancer logo image asset for 128x32 OLED Display (Rotated 180 degrees for right Corne half)
+ * Neuromancer logo image asset for 128x32 OLED Display
+ * Orientation: Rotated 180 degrees for right Corne half
+ * Colors: Black background with white text & symbols
  * Source: https://gist.github.com/fferrin/ceeaa6de903cab56f9ea2fe63abb404a
  */
 
