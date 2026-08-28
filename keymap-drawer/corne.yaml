@@ -1,90 +1,133 @@
 layout: {zmk_keyboard: corne}
 layers:
-  default: [TAB, Q, W, E, R, T, Y, U, I, O, P, BSPC, LCTRL, A, S, D, F, G, H, J, K, L, ;, '''', LSHFT, Z, X, C, V, B, N, M, ',', ., /, ESC, LGUI, lower, SPACE, RET,
-    raise, RALT]
-  lower:
+  QWERTZ: [TAB, Q, W, E, R, T, Y, U, I, O, P, BSPC, LSHFT, A, S, D, F, G, H, J, K, L, ;, '''', LCTRL, Z, X, C, V, B, N, M, ',', ., /, '&key_repeat', LGUI, Nav/Num,
+    SPACE, RET, Symbols, LALT]
+  Symbols:
   - TAB
+  - Alt+L
+  - Sft+/
+  - Alt+5
+  - Alt+6
+  - '`'
+  - Sft+1
+  - NUBS
+  - Sft+NUBS
+  - Sft+0
+  - Sft+6
+  - BSPC
+  - LSHFT
+  - Sft+Alt+7
+  - Sft+7
+  - Alt+8
+  - Alt+9
+  - Sft+]
+  - Sft+-
+  - Sft+8
+  - Sft+9
+  - '-'
+  - Sft+.
+  - '['
+  - LCTRL
+  - \
+  - Sft+4
+  - Alt+7
+  - Alt+N
+  - Sft+=
+  - ']'
+  - Sft+5
+  - Sft+2
+  - Sft+\
+  - Sft+,
+  - '&key_repeat'
+  - LGUI
+  - System
+  - SPACE
+  - RET
+  - {type: held}
+  - RGUI
+  Nav/Num:
+  - TAB
+  - BSPC
+  - UP
+  - DEL
+  - PG UP
+  - HOME
+  - '0'
   - '1'
   - '2'
   - '3'
   - '4'
+  - BSPC
+  - LSHFT
+  - LEFT
+  - DOWN
+  - RIGHT
+  - PG DN
+  - END
   - '5'
   - '6'
   - '7'
   - '8'
   - '9'
-  - '0'
-  - BSPC
-  - BT CLR
+  - ''
+  - LCTRL
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Sft+2
+  - Sft+\
+  - Sft+,
+  - '&key_repeat'
+  - LGUI
+  - {type: held}
+  - RET
+  - SPACE
+  - System
+  - RGUI
+  System:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - F11
+  - F12
+  - EP TOG
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
   - {t: BT, h: '2'}
   - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
-  - LEFT
-  - DOWN
-  - UP
-  - RIGHT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - BT CLR
+  - Alt+1
+  - Alt+2
+  - Alt+3
+  - Alt+4
+  - Alt+5
+  - OUT TOG
+  - ''
   - '&studio_unlock'
   - '&studio_unlock'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&sys_reset'
+  - '&bootloader'
+  - '&bootloader'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&key_repeat'
   - LGUI
   - {type: held}
-  - SPACE
   - RET
-  - {t: ▽, type: trans}
-  - RALT
-  raise:
-  - TAB
-  - '!'
-  - '@'
-  - '#'
-  - $
-  - '%'
-  - ^
-  - '&'
-  - '*'
-  - (
-  - )
-  - BSPC
-  - LCTRL
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '-'
-  - '='
-  - '['
-  - ']'
-  - \
-  - '`'
-  - LSHFT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - _
-  - +
-  - '{'
-  - '}'
-  - '|'
-  - '~'
-  - LGUI
-  - {t: ▽, type: trans}
   - SPACE
-  - RET
   - {type: held}
-  - RALT
+  - RGUI
