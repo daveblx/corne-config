@@ -1,0 +1,78 @@
+draw_config:
+  dark_mode: auto
+  key_w: 60.0
+  key_h: 56.0
+  split_gap: 30.0
+  arc_radius: 6.0
+  append_colon_to_layer_header: true
+
+parse_config:
+  preprocess: true
+  skip_binding_parsing: false
+  raw_binding_map:
+    # German QWERTZ base overrides
+    "&kp Y": "Z"
+    "&kp Z": "Y"
+    "&kp SEMI": "Ö"
+    "&kp SQT": "Ä"
+    "&kp LBKT": "Ü"
+    "&kp MINUS": "ß"
+    "&kp FSLH": "-"
+
+    # Windows German symbols (AltGr / RA)
+    "&kp RA(Q)": "@"
+    "&kp RA(MINUS)": "\\"
+    "&kp RA(N8)": "["
+    "&kp RA(N9)": "]"
+    "&kp RA(N7)": "{"
+    "&kp RA(N0)": "}"
+    "&kp RA(NUBS)": "|"
+    "&kp RA(RBKT)": "~"
+
+    # macOS German symbols (Option / LA)
+    "&kp LA(L)": "@"
+    "&kp LS(LA(N7))": "\\"
+    "&kp LA(N5)": "["
+    "&kp LA(N6)": "]"
+    "&kp LA(N8)": "{"
+    "&kp LA(N9)": "}"
+    "&kp LA(N7)": "|"
+    "&kp LA(N)": "~"
+
+    # Shared Symbols
+    "&kp LS(FSLH)": "_"
+    "&kp GRAVE": "^"
+    "&kp LS(N1)": "!"
+    "&kp NUBS": "<"
+    "&kp LS(NUBS)": ">"
+    "&kp LS(N0)": "="
+    "&kp LS(N6)": "&"
+    "&kp LS(N7)": "/"
+    "&kp LS(RBKT)": "*"
+    "&kp LS(MINUS)": "?"
+    "&kp LS(N8)": "("
+    "&kp LS(N9)": ")"
+    "&kp LS(DOT)": ":"
+    "&kp BSLH": "#"
+    "&kp LS(N4)": "$"
+    "&kp LS(EQUAL)": "`"
+    "&kp RBKT": "+"
+    "&kp LS(N5)": "%"
+    "&kp LS(N2)": '"'
+    "&kp LS(BSLH)": "'"
+    "&kp LS(COMMA)": ";"
+
+    # OS Switching & Controls
+    "&to 0": "WIN"
+    "&to 1": "MAC"
+    "&key_repeat": "Repeat"
+    "&studio_unlock": "Studio Unlock"
+    "&sys_reset": "Reset"
+    "&bootloader": "Bootloader"
+    "&out OUT_TOG": "Out Toggle"
+    "&ext_power EP_TOG": "Power Toggle"
+    "&kp LA(N1)": "Alt+1"
+    "&kp LA(N2)": "Alt+2"
+    "&kp LA(N3)": "Alt+3"
+    "&kp LA(N4)": "Alt+4"
+    "&kp LA(N5)": "Alt+5"

@@ -11,7 +11,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 // ============================================================
-// German QWERTZ & macOS symbol mappings (NeoQWERTZ layout)
+// German QWERTZ mappings (Windows default + macOS switchable)
 // ============================================================
 
 // Base German letters & umlauts (sent via standard HID keycodes interpreted by German OS)
@@ -23,7 +23,7 @@
 #define DE_SS   MINUS        // 'ß' / '?'
 #define DE_MINS FSLH         // '-' / '_'
 
-// Symbols on German layout
+// Shared symbols on German layout (identical on Windows and macOS)
 #define DE_EXLM LS(N1)       // '!'
 #define DE_DQUO LS(N2)       // '"'
 #define DE_DLR  LS(N4)       // '$'
@@ -46,32 +46,57 @@
 #define DE_HASH BSLH         // '#'
 #define DE_CIRC GRAVE        // '^'
 
-// macOS German symbols (resMagi default)
-#define DE_AT   LA(L)        // '@' (Option + L on macOS)
-#define DE_BSLS LS(LA(N7))   // '\' (Shift + Option + 7 on macOS)
-#define DE_LBRC LA(N5)       // '[' (Option + 5 on macOS)
-#define DE_RBRC LA(N6)       // ']' (Option + 6 on macOS)
-#define DE_LCBR LA(N8)       // '{' (Option + 8 on macOS)
-#define DE_RCBR LA(N9)       // '}' (Option + 9 on macOS)
-#define DE_PIPE LA(N7)       // '|' (Option + 7 on macOS)
-#define DE_TILD LA(N)        // '~' (Option + N on macOS)
+// Windows German symbols (AltGr / RA) - Default
+#define WIN_AT   RA(Q)        // '@' (AltGr + Q on Windows)
+#define WIN_BSLS RA(MINUS)    // '\' (AltGr + ß on Windows)
+#define WIN_LBRC RA(N8)       // '[' (AltGr + 8 on Windows)
+#define WIN_RBRC RA(N9)       // ']' (AltGr + 9 on Windows)
+#define WIN_LCBR RA(N7)       // '{' (AltGr + 7 on Windows)
+#define WIN_RCBR RA(N0)       // '}' (AltGr + 0 on Windows)
+#define WIN_PIPE RA(NUBS)     // '|' (AltGr + < on Windows)
+#define WIN_TILD RA(RBKT)     // '~' (AltGr + + on Windows)
+
+// macOS German symbols (Option / LA)
+#define MAC_AT   LA(L)        // '@' (Option + L on macOS)
+#define MAC_BSLS LS(LA(N7))   // '\' (Shift + Option + 7 on macOS)
+#define MAC_LBRC LA(N5)       // '[' (Option + 5 on macOS)
+#define MAC_RBRC LA(N6)       // ']' (Option + 6 on macOS)
+#define MAC_LCBR LA(N8)       // '{' (Option + 8 on macOS)
+#define MAC_RCBR LA(N9)       // '}' (Option + 9 on macOS)
+#define MAC_PIPE LA(N7)       // '|' (Option + 7 on macOS)
+#define MAC_TILD LA(N)        // '~' (Option + N on macOS)
 
 / {
     keymap {
         compatible = "zmk,keymap";
 
         base_layer {
-            display-name = "QWERTZ";
+            display-name = "Windows";
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Z  |  U   |  I  |  O  |  P  | BKSP |
 // | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  Ö  |  Ä   |
 // | CTRL |  Y  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  -  | REP  |
-//                    | GUI | L(2)| SPC |   | ENT | L(1) | ALT |
+//                    | GUI | L(3)| SPC |   | ENT | L(2)| ALT |
             bindings = <
    &kp TAB   &kp Q    &kp W    &kp E    &kp R    &kp T      &kp DE_Z  &kp U     &kp I      &kp O    &kp P        &kp BSPC
    &kp LSHFT &kp A    &kp S    &kp D    &kp F    &kp G      &kp H     &kp J     &kp K      &kp L    &kp DE_ODIA  &kp DE_ADIA
    &kp LCTRL &kp DE_Y &kp X    &kp C    &kp V    &kp B      &kp N     &kp M     &kp COMMA  &kp DOT  &kp DE_MINS  &key_repeat
-                      &kp LGUI &mo 2    &kp SPACE           &kp RET   &mo 1     &kp LALT
+                      &kp LGUI &mo 3    &kp SPACE           &kp RET   &mo 2     &kp LALT
+            >;
+        };
+
+        mac_base_layer {
+            display-name = "macOS";
+// -----------------------------------------------------------------------------------------
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Z  |  U   |  I  |  O  |  P  | BKSP |
+// | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  Ö  |  Ä   |
+// | CTRL |  Y  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  -  | REP  |
+//                    | GUI | L(3)| SPC |   | ENT | L(4)| ALT |
+            bindings = <
+   &kp TAB   &kp Q    &kp W    &kp E    &kp R    &kp T      &kp DE_Z  &kp U     &kp I      &kp O    &kp P        &kp BSPC
+   &kp LSHFT &kp A    &kp S    &kp D    &kp F    &kp G      &kp H     &kp J     &kp K      &kp L    &kp DE_ODIA  &kp DE_ADIA
+   &kp LCTRL &kp DE_Y &kp X    &kp C    &kp V    &kp B      &kp N     &kp M     &kp COMMA  &kp DOT  &kp DE_MINS  &key_repeat
+                      &kp LGUI &mo 3    &kp SPACE           &kp RET   &mo 4     &kp LALT
             >;
         };
 
@@ -81,12 +106,12 @@
 // |  TAB |  @  |  _  |  [  |  ]  |  ^  |   |  !  |  <   |  >  |  =  |  &  | BKSP |
 // | SHFT |  \  |  /  |  {  |  }  |  *  |   |  ?  |  (   |  )  |  ß  |  :  |  Ü   |
 // | CTRL |  #  |  $  |  |  |  ~  |  `  |   |  +  |  %   |  "  |  '  |  ;  | REP  |
-//                    | GUI | L(3)| SPC |   | ENT |      | RGUI|
+//                    | GUI | L(5)| SPC |   | ENT |      | RGUI|
             bindings = <
-   &kp TAB   &kp DE_AT   &kp DE_UNDS &kp DE_LBRC &kp DE_RBRC &kp DE_CIRC    &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR &kp BSPC
-   &kp LSHFT &kp DE_BSLS &kp DE_SLSH &kp DE_LCBR &kp DE_RCBR &kp DE_ASTR    &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_SS   &kp DE_COLN &kp DE_UDIA
-   &kp LCTRL &kp DE_HASH &kp DE_DLR  &kp DE_PIPE &kp DE_TILD &kp DE_GRV     &kp DE_PLUS &kp DE_PERC &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN &key_repeat
-                         &kp LGUI    &mo 3       &kp SPACE                  &kp RET     &none       &kp RGUI
+   &kp TAB   &kp WIN_AT   &kp DE_UNDS &kp WIN_LBRC &kp WIN_RBRC &kp DE_CIRC    &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR &kp BSPC
+   &kp LSHFT &kp WIN_BSLS &kp DE_SLSH &kp WIN_LCBR &kp WIN_RCBR &kp DE_ASTR    &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_SS   &kp DE_COLN &kp DE_UDIA
+   &kp LCTRL &kp DE_HASH  &kp DE_DLR  &kp WIN_PIPE &kp WIN_TILD &kp DE_GRV     &kp DE_PLUS &kp DE_PERC &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN &key_repeat
+                          &kp LGUI    &mo 5        &kp SPACE                   &kp RET     &none       &kp RGUI
             >;
         };
 
@@ -96,12 +121,27 @@
 // |  TAB | BKSP|  UP | DEL | PGUP| HOME|   |  0  |  1   |  2  |  3  |  4  | BKSP |
 // | SHFT | LEFT| DOWN| RGHT| PGDN| END |   |  5  |  6   |  7  |  8  |  9  |      |
 // | CTRL |     |     |     |     |     |   |     |      |  "  |  '  |  ;  | REP  |
-//                    | GUI |     | ENT |   | SPC | L(3) | RGUI|
+//                    | GUI |     | ENT |   | SPC | L(5) | RGUI|
             bindings = <
    &kp TAB   &kp BSPC &kp UP   &kp DEL   &kp PG_UP &kp HOME    &kp N0    &kp N1    &kp N2      &kp N3      &kp N4      &kp BSPC
    &kp LSHFT &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN &kp END     &kp N5    &kp N6    &kp N7      &kp N8      &kp N9      &none
    &kp LCTRL &none    &none    &none     &none     &none       &none     &none     &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN &key_repeat
-                      &kp LGUI &none     &kp RET               &kp SPACE &mo 3     &kp RGUI
+                      &kp LGUI &none     &kp RET               &kp SPACE &mo 5     &kp RGUI
+            >;
+        };
+
+        mac_symbol_layer {
+            display-name = "Mac Sym";
+// -----------------------------------------------------------------------------------------
+// |  TAB |  @  |  _  |  [  |  ]  |  ^  |   |  !  |  <   |  >  |  =  |  &  | BKSP |
+// | SHFT |  \  |  /  |  {  |  }  |  *  |   |  ?  |  (   |  )  |  ß  |  :  |  Ü   |
+// | CTRL |  #  |  $  |  |  |  ~  |  `  |   |  +  |  %   |  "  |  '  |  ;  | REP  |
+//                    | GUI | L(5)| SPC |   | ENT |      | RGUI|
+            bindings = <
+   &kp TAB   &kp MAC_AT   &kp DE_UNDS &kp MAC_LBRC &kp MAC_RBRC &kp DE_CIRC    &kp DE_EXLM &kp DE_LABK &kp DE_RABK &kp DE_EQL  &kp DE_AMPR &kp BSPC
+   &kp LSHFT &kp MAC_BSLS &kp DE_SLSH &kp MAC_LCBR &kp MAC_RCBR &kp DE_ASTR    &kp DE_QUES &kp DE_LPRN &kp DE_RPRN &kp DE_SS   &kp DE_COLN &kp DE_UDIA
+   &kp LCTRL &kp DE_HASH  &kp DE_DLR  &kp MAC_PIPE &kp MAC_TILD &kp DE_GRV     &kp DE_PLUS &kp DE_PERC &kp DE_DQUO &kp DE_QUOT &kp DE_SCLN &key_repeat
+                          &kp LGUI    &mo 5        &kp SPACE                   &kp RET     &none       &kp RGUI
             >;
         };
 
@@ -110,12 +150,12 @@
 // -----------------------------------------------------------------------------------------
 // |  F1  |  F2 |  F3 |  F4 |  F5 |  F6 |   |  F7 |  F8  |  F9 | F10 | F11 | F12  |
 // | EP_TOG| BT1| BT2 | BT3 | BT4 |BTCLR|   | Alt1| Alt2 | Alt3| Alt4| Alt5|OUT_TOG|
-// |      |STUDO|STUDO|RESET|BOOTL|BOOTL|   |     |      |     |     |     | REP  |
+// |      |STUDO|STUDO|RESET|BOOTL|BOOTL|   |     | WIN  | MAC |     |     | REP  |
 //                    | GUI |     | ENT |   | SPC |      | RGUI|
             bindings = <
    &kp F1              &kp F2         &kp F3         &kp F4        &kp F5         &kp F6          &kp F7        &kp F8        &kp F9        &kp F10       &kp F11     &kp F12
    &ext_power EP_TOG   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_CLR      &kp LA(N1)    &kp LA(N2)    &kp LA(N3)    &kp LA(N4)    &kp LA(N5)  &out OUT_TOG
-   &none               &studio_unlock &studio_unlock &sys_reset    &bootloader    &bootloader     &none         &none         &none         &none         &none       &key_repeat
+   &none               &studio_unlock &studio_unlock &sys_reset    &bootloader    &bootloader     &none         &to 0         &to 1         &none         &none       &key_repeat
                                       &kp LGUI       &none         &kp RET                        &kp SPACE     &none         &kp RGUI
             >;
         };

@@ -1,44 +1,46 @@
 layout: {zmk_keyboard: corne}
 layers:
-  QWERTZ: [TAB, Q, W, E, R, T, Y, U, I, O, P, BSPC, LSHFT, A, S, D, F, G, H, J, K, L, ;, '''', LCTRL, Z, X, C, V, B, N, M, ',', ., /, '&key_repeat', LGUI, Nav/Num,
-    SPACE, RET, Symbols, LALT]
+  Windows: [TAB, Q, W, E, R, T, Z, U, I, O, P, BSPC, LSHFT, A, S, D, F, G, H, J, K, L, Ö, Ä, LCTRL, Y, X, C, V, B, N, M, ',', ., '-', Repeat, LGUI, Nav/Num, SPACE,
+    RET, Symbols, LALT]
+  macOS: [TAB, Q, W, E, R, T, Z, U, I, O, P, BSPC, LSHFT, A, S, D, F, G, H, J, K, L, Ö, Ä, LCTRL, Y, X, C, V, B, N, M, ',', ., '-', Repeat, LGUI, Nav/Num, SPACE,
+    RET, Mac Sym, LALT]
   Symbols:
   - TAB
-  - Alt+L
-  - Sft+/
-  - Alt+5
-  - Alt+6
-  - '`'
-  - Sft+1
-  - NUBS
-  - Sft+NUBS
-  - Sft+0
-  - Sft+6
+  - '@'
+  - _
+  - '['
+  - ']'
+  - ^
+  - '!'
+  - <
+  - '>'
+  - '='
+  - '&'
   - BSPC
   - LSHFT
-  - Sft+Alt+7
-  - Sft+7
-  - Alt+8
-  - Alt+9
-  - Sft+]
-  - Sft+-
-  - Sft+8
-  - Sft+9
-  - '-'
-  - Sft+.
-  - '['
-  - LCTRL
   - \
-  - Sft+4
-  - Alt+7
-  - Alt+N
-  - Sft+=
-  - ']'
-  - Sft+5
-  - Sft+2
-  - Sft+\
-  - Sft+,
-  - '&key_repeat'
+  - /
+  - '{'
+  - '}'
+  - '*'
+  - '?'
+  - (
+  - )
+  - ß
+  - ':'
+  - Ü
+  - LCTRL
+  - '#'
+  - $
+  - '|'
+  - '~'
+  - '`'
+  - +
+  - '%'
+  - '"'
+  - ''''
+  - ;
+  - Repeat
   - LGUI
   - System
   - SPACE
@@ -78,15 +80,58 @@ layers:
   - ''
   - ''
   - ''
-  - Sft+2
-  - Sft+\
-  - Sft+,
-  - '&key_repeat'
+  - '"'
+  - ''''
+  - ;
+  - Repeat
   - LGUI
   - {type: held}
   - RET
   - SPACE
   - System
+  - RGUI
+  Mac Sym:
+  - TAB
+  - '@'
+  - _
+  - Alt+5
+  - ']'
+  - ^
+  - '!'
+  - <
+  - '>'
+  - '='
+  - '&'
+  - BSPC
+  - LSHFT
+  - \
+  - /
+  - '{'
+  - '}'
+  - '*'
+  - '?'
+  - (
+  - )
+  - ß
+  - ':'
+  - Ü
+  - LCTRL
+  - '#'
+  - $
+  - '|'
+  - '~'
+  - '`'
+  - +
+  - '%'
+  - '"'
+  - ''''
+  - ;
+  - Repeat
+  - LGUI
+  - System
+  - SPACE
+  - RET
+  - {type: held}
   - RGUI
   System:
   - F1
@@ -101,7 +146,7 @@ layers:
   - F10
   - F11
   - F12
-  - EP TOG
+  - Power Toggle
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
   - {t: BT, h: '2'}
@@ -112,19 +157,19 @@ layers:
   - Alt+3
   - Alt+4
   - Alt+5
-  - OUT TOG
+  - Out Toggle
   - ''
-  - '&studio_unlock'
-  - '&studio_unlock'
-  - '&sys_reset'
-  - '&bootloader'
-  - '&bootloader'
+  - Studio Unlock
+  - Studio Unlock
+  - Reset
+  - Bootloader
+  - Bootloader
+  - ''
+  - WIN
+  - MAC
   - ''
   - ''
-  - ''
-  - ''
-  - ''
-  - '&key_repeat'
+  - Repeat
   - LGUI
   - {type: held}
   - RET
