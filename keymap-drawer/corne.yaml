@@ -1,9 +1,9 @@
 layout: {zmk_keyboard: corne}
 layers:
-  Windows: [TAB, Q, W, E, R, T, Z, U, I, O, P, BSPC, LSHFT, A, S, D, F, G, H, J, K, L, Ö, Ä, LCTRL, Y, X, C, V, B, N, M, ',', ., '-', Repeat, LGUI, Nav/Num, SPACE,
-    RET, Symbols, LALT]
-  macOS: [TAB, Q, W, E, R, T, Z, U, I, O, P, BSPC, LSHFT, A, S, D, F, G, H, J, K, L, Ö, Ä, LCTRL, Y, X, C, V, B, N, M, ',', ., '-', Repeat, LGUI, Nav/Num, SPACE,
-    RET, Mac Sym, LALT]
+  Windows: [TAB, Q, W, E, R, T, Z, U, I, O, P, BSPC, LSHFT, A, S, D, F, G, H, J, K, L, Ö, Ä, LCTRL, Y, X, C, V, B, N, M, ',', ., '-', ESC, LGUI, Nav/Num, SPACE, RET,
+    Symbols, LALT]
+  macOS: [TAB, Q, W, E, R, T, Z, U, I, O, P, BSPC, LSHFT, A, S, D, F, G, H, J, K, L, Ö, Ä, LCTRL, Y, X, C, V, B, N, M, ',', ., '-', ESC, LGUI, Nav/Num, SPACE, RET,
+    Mac Sym, LALT]
   Symbols:
   - TAB
   - '@'
@@ -83,7 +83,7 @@ layers:
   - '"'
   - ''''
   - ;
-  - Repeat
+  - DEL
   - LGUI
   - {type: held}
   - RET
