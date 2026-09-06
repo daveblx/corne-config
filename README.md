@@ -6,6 +6,8 @@
 [![Hardware](https://img.shields.io/badge/Hardware-nice!nano%20v2%20%7C%20Corne%20v3-orange)](https://nicekeyboards.com/nice-nano)
 [![ZMK Studio](https://img.shields.io/badge/ZMK%20Studio-Supported-brightgreen?logo=target)](https://zmk.dev/docs/features/studio)
 
+The keyboard layout I'm using.
+
 ## Keymap Layout
 
 <p align="center">
