@@ -1,0 +1,5 @@
+# OS
+.DS_Store
+
+# Nested repository: zmk-config-corne lives in its own repo.
+zmk-config-corne/
